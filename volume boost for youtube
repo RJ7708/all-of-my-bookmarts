@@ -1,0 +1,4 @@
+javascript:(function() { if(!window.boosterGainNode) { const video = document.querySelector('video'); const audioCtx = new AudioContext(); 
+const mediaSource = audioCtx.createMediaElementSource(video); const gainNode = audioCtx.createGain(); mediaSource.connect(gainNode); gainNode.connect
+(audioCtx.destination); window.boosterGainNode = gainNode; } window.boosterGainNode.gain.value = parseFloat(prompt('Enter Boost Level. eg: 3 
+(enter 1 to reset)')) ?? 1; })();
